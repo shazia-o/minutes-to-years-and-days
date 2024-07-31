@@ -1,0 +1,29 @@
+public class MinutesToYearsDaysCalculator {
+//This is a program that calculates the equivalent years and days based on a given input in minutes
+
+//initializing variables
+    private static final int
+    min_in_hr = 60;
+    private static final int
+    hr_in_day = 24;
+    private static final int 
+    Days_in_yr = 365;
+    private static final int 
+    MIN_PER_DAY = hr_in_day * min_in_hr;
+    private static final int 
+    MIN_PER_YEAR = min_in_hr * hr_in_day * Days_in_yr;    
+    
+    public static void printYearsAndDays(long minutes) {
+//Validation, input can't be negative
+                if (minutes < 0) {
+            System.out.println("Invalid Value");
+            return;
+        } 
+//Calculating the complete years and remaining days, then printing the result
+                long years = minutes / MIN_PER_YEAR;
+                long days = (minutes / MIN_PER_DAY) % Days_in_yr; 
+                System.out.println(minutes + " min = " + years  + " y and " + days + " d");
+        
+    }
+    
+}
